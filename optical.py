@@ -98,32 +98,32 @@ def generate_report(video_name, exercise):
     # Add current date and time of exam
     report_content.append(Paragraph(f"Exam Date and Time: {report_date}", styles['Normal']))
 
-    # Add previous date if available
+    # Previous date if available
     csv_path = f"metrics/metrics_{exercise}.csv"
     if os.path.exists(csv_path):
         df = pd.read_csv(csv_path)
         previous_date = df['Date and Time'].iloc[-1]
         report_content.append(Paragraph(f"Previous Exam Date: {previous_date}", styles['Normal']))
 
-    # Add headings for metrics
+    # Headings for metrics
     report_content.append(Paragraph("Metrics:", styles['Heading1']))
 
-    # Add smoothness average
+    # Smoothness average
     smoothness_avg = np.mean(exercise_metrics_history[exercise]['Smoothness'])
     report_content.append(Paragraph(f"Smoothness Average: {smoothness_avg}", styles['Normal']))
 
-    # Add motion intensity average
+    # Motion intensity average
     motion_intensity_avg = np.mean(exercise_metrics_history[exercise]['Motion Intensity'])
     report_content.append(Paragraph(f"Motion Intensity Average: {motion_intensity_avg}", styles['Normal']))
 
-    # Add motion complexity average
+    # Motion complexity average
     motion_complexity_avg = np.mean(exercise_metrics_history[exercise]['Motion Complexity'])
     report_content.append(Paragraph(f"Motion Complexity Average: {motion_complexity_avg}", styles['Normal']))
 
-    # Add graphs
+    # Graphs
     report_content.append(Paragraph("Graphs:", styles['Heading1']))
 
-    # Add metrics progress graph
+    # Metrics progress graph
     """metrics_progress_img = f"reports/metrics_progress_{exercise}.png"
     if os.path.exists(metrics_progress_img):
         report_content.append(Paragraph("Movement Analysis Metrics Progress:", styles['Heading2']))
