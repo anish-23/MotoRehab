@@ -16,9 +16,9 @@ Data Visualization: Matplotlib library for generating visualizations such as tim
 
 Installation
 Install Dependencies:
-For the frontend, ensure Flutter is installed and run flutter pub get in the project directory.
+For the frontend, ensure Flutter is installed and run flutter pub get in the project directory(app).
 For the backend, ensure Python and Flask are installed.
-Run the Application: Start the backend server by running python app.py. Run the Flutter application using flutter run.
+Run the Application: Start the backend server by running python optical.py. Run the Flutter application(app) using flutter run.
 
 Usage
 Upload Video: Open the MotoRehab app and navigate to the 'Upload Video' section. Select the exercise video from your device and upload it.
